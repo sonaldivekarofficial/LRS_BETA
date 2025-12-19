@@ -4,7 +4,7 @@ import jsPDF from 'jspdf';
 
 // --- CONFIGURATION ---
 // REPLACE THIS URL WITH YOUR ACTUAL RAILWAY URL
-const BACKEND_URL = 'https://your-railway-app-name.up.railway.app'; 
+const BACKEND_URL = 'https://lrsbeta.up.railway.app'; 
 
 const allSchemas = [
   {
