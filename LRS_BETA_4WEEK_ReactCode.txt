@@ -280,6 +280,40 @@ const allSchemas = [
 ];
 
 export default function CompleteSchemaWorkbook() {
+  const [selectedSchema, setSelectedSchema] = useState(null);
+  const [completedWeeks, setCompletedWeeks] = useState({});
+  
+  // --- ADD THESE NEW STATE VARIABLES ---
+  const [view, setView] = useState('directory'); // Controls which screen is visible
+  const [loading, setLoading] = useState(false); // Shows a spinner during calculation
+  const [results, setResults] = useState([]);   // Stores the top schemas from Railway
+  const [answers, setAnswers] = useState({});   // Stores the user's 1-5 ratings
+
+  // --- YOUR INTEGRATION FUNCTION ---
+  const handleAssessmentSubmit = async () => {
+    setLoading(true);
+    try {
+      // Replace with your ACTUAL Railway URL from your dashboard
+      const response = await fetch('https://your-railway-app-name.up.railway.app/api/calculate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ answers: answers }) // Sends the survey data
+      });
+
+      if (!response.ok) throw new Error('Backend unreachable');
+      
+      const data = await response.json();
+      
+      // Assuming your Python app.py returns { "top_schemas": [...] }
+      setResults(data.top_schemas); 
+      setView('results'); // Switch view to show the user their matches
+    } catch (err) {
+      alert("Connection failed. Check if Railway app is 'Active' and URL is correct.");
+      console.error("Connection failed:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
   const [view, setView] = useState('directory'); 
   const [selectedSchema, setSelectedSchema] = useState(null);
   const [completedWeeks, setCompletedWeeks] = useState({});
