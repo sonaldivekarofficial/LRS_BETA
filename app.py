@@ -33,7 +33,7 @@ def load_data_file(filename):
 
 # --- API ENDPOINTS ---
 
-@app.route('/', methods=['GET'])
+@app.route('/api/calculate', methods=['POST'])
 def health_check():
     return jsonify({"status": "LRS Scoring Engine Online", "version": "1.0.0"}), 200
 
