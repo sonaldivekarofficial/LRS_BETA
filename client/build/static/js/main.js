@@ -280,3 +280,5 @@ export default App;
 // At the very end, add this to mount the app
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
