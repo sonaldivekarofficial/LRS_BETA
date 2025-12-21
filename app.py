@@ -12,13 +12,13 @@ CORS(app)  # Allow React frontend to call API
 # -----------------------------
 # CONFIGURATION
 # -----------------------------
-# Folder where your React build is located after `npm run build`
+# Folder where your React build is located
 FRONTEND_BUILD_FOLDER = "client/build"
 
-# CSV file names (exact match to your repo)
+# CSV file names — MUST EXACTLY MATCH your uploaded files in repo
 QUESTIONS_FILE = "LRS_Beta_QA.csv"
-WEIGHT_MAP_FILE = "LRS_BETA_Weighted_Score_Map.csv"
-SCHEMA_INFO_FILE = "LRS_Beta_Young_18_Schemas.csv"
+WEIGHT_MAP_FILE = "LRS_BETA_Weighted_Score_Map.csv"          # ← Fixed: underscore, no space
+SCHEMA_INFO_FILE = "LRS_Beta_Young_18_Schemas.csv"           # ← Fixed: no leading space
 
 # -----------------------------
 # DATA LOADER (safe for CSV or misnamed XLSX)
