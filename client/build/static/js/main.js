@@ -17,7 +17,7 @@ const App = () => {
     fetch(`${BACKEND_URL}/api/questions`)
       .then(res => res.json())
       .then(data => setQuestions(data))
-      .catch(err => console.error(err));
+      .catch(err => console.error("Failed to load questions", err));
   }, []);
 
   const handleAnswer = (id, value) => {
@@ -66,6 +66,7 @@ const App = () => {
     setCompletedWeeks(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
+  // Landing
   if (currentPage === 'landing') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-8">
@@ -80,6 +81,7 @@ const App = () => {
     );
   }
 
+  // Quiz
   if (currentPage === 'quiz') {
     return (
       <div className="min-h-screen bg-slate-50 py-12 px-4">
@@ -111,6 +113,7 @@ const App = () => {
     );
   }
 
+  // Results
   if (currentPage === 'results' && results) {
     return (
       <div className="min-h-screen bg-slate-50 py-12 px-4">
@@ -143,6 +146,9 @@ const App = () => {
                 <div className="bg-slate-900 p-10 text-white">
                   <div className="flex justify-between items-start">
                     <div>
+                      <div className="bg-blue-600 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 inline-block">
+                        {selectedSchema.category}
+                      </div>
                       <h2 className="text-4xl md:text-5xl font-black mb-3">{selectedSchema.name}</h2>
                     </div>
                     <div className="flex gap-2 print:hidden">
@@ -151,28 +157,47 @@ const App = () => {
                     </div>
                   </div>
                 </div>
+                <div className="p-10 grid md:grid-cols-3 gap-8 bg-slate-50 border-b border-slate-200">
+                  <div className="space-y-2">
+                    <h4 className="flex items-center gap-2 text-red-600 font-black text-[10px] uppercase tracking-widest"><Brain size={16}/> Root Cause</h4>
+                    <p className="text-sm text-slate-700 leading-relaxed">{selectedSchema.causes}</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="flex items-center gap-2 text-orange-600 font-black text-[10px] uppercase tracking-widest"><AlertCircle size={16}/> Symptoms</h4>
+                    <p className="text-sm text-slate-700 leading-relaxed">{selectedSchema.symptoms}</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="flex items-center gap-2 text-purple-600 font-black text-[10px] uppercase tracking-widest"><Activity size={16}/> Manifestations</h4>
+                    <p className="text-sm text-slate-700 leading-relaxed font-medium">{selectedSchema.manifestations}</p>
+                  </div>
+                </div>
                 <div className="p-10">
                   <h3 className="text-3xl font-black text-slate-900 mb-10">4-Week Action Plan</h3>
                   <div className="space-y-10">
                     {Object.keys(selectedSchema.plan).map((week, idx) => {
                       const key = `${selectedSchema.name}-${week}`;
                       return (
-                        <div key={week} className="flex gap-8">
+                        <div key={week} className="flex gap-8 group">
                           <div className="flex flex-col items-center">
-                            <div className={`p-4 rounded-2xl ${completedWeeks[key] ? 'bg-green-500 text-white' : 'bg-blue-100 text-blue-600'}`}>
+                            <div className={`p-4 rounded-2xl transition-all duration-500 ${completedWeeks[key] ? 'bg-green-500 text-white' : 'bg-blue-100 text-blue-600 shadow-sm'}`}>
                               <BookOpen size={24} />
                             </div>
-                            {idx < 3 && <div className="w-px h-32 bg-slate-200 mt-4" />}
+                            {idx < 3 && <div className="w-px h-full bg-slate-200 mt-4" />}
                           </div>
-                          <div className="flex-1 pb-10">
-                            <div className="flex justify-between mb-3">
-                              <h4 className={`text-xl font-black uppercase ${completedWeeks[key] ? 'text-green-600' : 'text-slate-800'}`}>Week {idx+1}</h4>
-                              <label className="flex items-center gap-2 text-xs font-bold text-slate-400 cursor-pointer print:hidden">
-                                <input type="checkbox" checked={!!completedWeeks[key]} onChange={() => toggleWeekComplete(selectedSchema.name, week)} className="w-5 h-5" />
-                                MARK COMPLETE
+                          <div className="pb-10 flex-1">
+                            <div className="flex justify-between items-center mb-3">
+                              <h4 className={`text-xl font-black uppercase tracking-tight ${completedWeeks[key] ? 'text-green-600' : 'text-slate-800'}`}>Week {idx+1}</h4>
+                              <label className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase cursor-pointer hover:text-blue-600 print:hidden">
+                                <input 
+                                  type="checkbox"
+                                  checked={!!completedWeeks[key]}
+                                  onChange={() => toggleWeekComplete(selectedSchema.name, week)}
+                                  className="w-5 h-5 rounded-lg border-slate-300 text-blue-600 focus:ring-blue-500"
+                                />
+                                {completedWeeks[key] ? 'COMPLETED' : 'MARK COMPLETE'}
                               </label>
                             </div>
-                            <div className={`p-6 rounded-3xl border ${completedWeeks[key] ? 'bg-green-50 border-green-200' : 'bg-white border-slate-200'}`}>
+                            <div className={`p-6 rounded-3xl leading-relaxed text-slate-700 border ${completedWeeks[key] ? 'bg-green-50/50 border-green-200' : 'bg-white border-slate-200 shadow-sm'}`}>
                               {selectedSchema.plan[week]}
                             </div>
                           </div>
@@ -182,6 +207,9 @@ const App = () => {
                   </div>
                 </div>
               </div>
+              <footer className="mt-12 text-center text-slate-400 text-xs pb-12">
+                This is a self-help tool. It is not a substitute for professional therapy.
+              </footer>
             </div>
           )}
         </div>
@@ -189,7 +217,7 @@ const App = () => {
     );
   }
 
-  return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+  return <div className="min-h-screen flex items-center justify-center bg-slate-100">Loading LRS Assessment...</div>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
