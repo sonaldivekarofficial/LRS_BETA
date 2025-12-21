@@ -17,8 +17,8 @@ FRONTEND_BUILD_FOLDER = "client/build"
 
 # CSV file names (exact match to your repo)
 QUESTIONS_FILE = "LRS_Beta_QA.csv"
-WEIGHT_MAP_FILE = "LRS_BETA_Weighted_Score_Map.csv"   # underscore, no space
-SCHEMA_INFO_FILE = "LRS_Beta_Young_18_Schemas.csv"    # no leading space
+WEIGHT_MAP_FILE = "LRS_BETA_Weighted_Score_Map.csv"
+SCHEMA_INFO_FILE = "LRS_Beta_Young_18_Schemas.csv"
 
 # -----------------------------
 # DATA LOADER (safe for CSV or misnamed XLSX)
