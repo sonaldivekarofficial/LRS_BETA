@@ -1,0 +1,101 @@
+Question ID,Schema Name,Direction,Weight,Notes
+1,Vulnerability to Harm or Illness,Reverse,1,Vitality sleep
+2,Negativity/Pessimism,Reverse,1,Vitality refresh
+3,Dependence/Incompetence,Reverse,1,Vitality energy
+4,Vulnerability to Harm or Illness,Reverse,1,Vitality activity
+5,Entitlement/Grandiosity,Direct,1,Vitality expectation
+6,Dependence/Incompetence,Reverse,1,Vitality focus
+7,Vulnerability to Harm or Illness,Reverse,1,Vitality resilience
+8,Negativity/Pessimism,Reverse,1,Vitality mood
+9,Negativity/Pessimism,Reverse,1,Environment support
+10,Enmeshment/Undeveloped Self,Reverse,1,Environment privacy
+11,Vulnerability to Harm or Illness,Direct,1,Environment safety
+12,Emotional Inhibition,Direct,1,Environment daylight
+13,Vulnerability to Harm or Illness,Direct,1,Environment noise
+14,Dependence/Incompetence,Direct,1,Environment organization
+15,Negativity/Pessimism,Direct,1,Environment nature
+16,Enmeshment/Undeveloped Self,Direct,1,Environment identity
+17,Entitlement/Grandiosity,Direct,1,Digital rules
+18,Defectiveness/Shame,Direct,1,Digital comparison
+19,Abandonment/Instability,Direct,1,Digital validation
+20,Emotional Inhibition,Direct,1,Digital curating
+21,Insufficient Self-Control/Self-Discipline,Direct,1,Digital interruptions
+22,Subjugation,Direct,1,Digital compliance
+23,Failure,Reverse,1,Stability bills
+24,Vulnerability to Harm or Illness,Reverse,1,Stability expense
+25,Negativity/Pessimism,Direct,1,Stability stress
+26,Insufficient Self-Control/Self-Discipline,Reverse,1,Stability savings
+27,Negativity/Pessimism,Reverse,1,Stability plan
+28,Vulnerability to Harm or Illness,Reverse,1,Stability belief
+29,Negativity/Pessimism,Direct,1,Stability anxiety
+30,Negativity/Pessimism,Direct,1,Stability fatalism
+31,Insufficient Self-Control/Self-Discipline,Reverse,1,Growth finish
+32,Vulnerability to Harm or Illness,Reverse,1,Growth unexpected
+33,Emotional Inhibition,Reverse,1,Growth calm
+34,Failure,Reverse,1,Growth capable
+35,Unrelenting Standards/Hypercriticalness,Direct,1,Growth perfection
+36,Subjugation,Direct,1,Growth avoidance
+37,Insufficient Self-Control/Self-Discipline,Direct,1,Capability procrastination
+38,Emotional Inhibition,Direct,1,Capability defensiveness
+39,Insufficient Self-Control/Self-Discipline,Direct,1,Capability control
+40,Entitlement/Grandiosity,Direct,1,Capability empathy
+41,Social Isolation/Alienation,Direct,1,Connection outsider
+42,Mistrust/Abuse,Direct,1,Connection trust
+43,Approval-Seeking/Recognition-Seeking,Direct,1,Connection comparison
+44,Dependence/Incompetence,Direct,1,Connection depend
+45,Emotional Deprivation,Reverse,1,Connection close
+46,Emotional Deprivation,Reverse,1,Connection intimacy
+47,Abandonment/Instability,Direct,1,Connection worry
+48,Emotional Inhibition,Direct,1,Connection show
+49,Emotional Inhibition,Direct,1,Connection private
+50,Enmeshment/Undeveloped Self,Direct,1,Connection preoccupied
+51,Social Isolation/Alienation,Direct,1,Connection isolate
+52,Negativity/Pessimism,Reverse,1,Meaning engaged
+53,Self-Sacrifice,Reverse,1,Meaning contribute
+54,Dependence/Incompetence,Reverse,1,Meaning competent
+55,Defectiveness/Shame,Reverse,1,Meaning good
+56,Negativity/Pessimism,Reverse,1,Meaning optimistic
+57,Social Isolation/Alienation,Reverse,1,Meaning respect
+58,Self-Sacrifice,Reverse,1,Meaning help
+59,Emotional Inhibition,Reverse,1,Meaning flow
+60,Enmeshment/Undeveloped Self,Reverse,1,Meaning choices
+61,Negativity/Pessimism,Reverse,1,Meaning grateful
+62,Negativity/Pessimism,Reverse,1,Meaning peace
+63,Abandonment/Instability,1 for Yes,1.5,Roots betrayal
+64,Mistrust/Abuse,1 for Yes,1.5,Roots violence
+65,Vulnerability to Harm or Illness,1 for Yes,1.5,Roots accident
+66,Punitiveness,1 for Yes,1.5,Roots guilt
+67,Abandonment/Instability,Direct,1.2,Roots loss
+68,Emotional Deprivation,Direct,1.2,Roots distant
+69,Emotional Deprivation,Direct,1.2,Roots affection
+70,Self-Sacrifice,Direct,1.2,Roots grow up fast
+71,Mistrust/Abuse,Direct,1.2,Roots fought
+72,Abandonment/Instability,Direct,1.2,Roots absent
+73,Social Isolation/Alienation,Direct,1.2,Roots bullied
+74,Emotional Deprivation,Direct,1.5,Roots neglected
+75,Mistrust/Abuse,Direct,1.5,Roots cruel
+76,Defectiveness/Shame,1 for Yes,1.5,Roots swear
+77,Emotional Deprivation,1 for Yes,1.5,Roots unloved
+78,Enmeshment/Undeveloped Self,1 for Yes,1.5,Roots depressed
+79,Mistrust/Abuse,Direct,1.5,Roots protect
+80,Mistrust/Abuse,Direct,1.5,Roots touched
+81,Mistrust/Abuse,1 for Yes,1.5,Roots addiction
+82,Mistrust/Abuse,1 for Yes,1.5,Roots witnessed
+83,Social Isolation/Alienation,Direct,1.2,Probe alone
+84,Punitiveness,Direct,1.2,Probe critical self
+85,Defectiveness/Shame,Direct,1.2,Probe flawed
+86,Emotional Deprivation,Direct,1.2,Probe ask support
+87,Mistrust/Abuse,Direct,1.2,Probe deceive
+88,Negativity/Pessimism,Direct,1.2,Probe anticipate bad
+89,Self-Sacrifice,Direct,1.2,Probe guilty pleasure
+90,Approval-Seeking/Recognition-Seeking,Direct,1.2,Probe backseat
+91,Insufficient Self-Control/Self-Discipline,Direct,1.2,Probe struggle habits
+92,Subjugation,Direct,1.2,Probe suppress peace
+93,Punitiveness,Direct,1.2,Probe forgive others
+94,Negativity/Pessimism,Reverse,1.2,Probe optimistic solve
+95,Approval-Seeking/Recognition-Seeking,Direct,1.2,Probe conditional worth
+96,Enmeshment/Undeveloped Self,Direct,1.2,Probe confused goals
+97,Negativity/Pessimism,Direct,1.2,Probe empty meaning
+98,All (flexible),AI coding,,AI coding (multiple schemas based on content)
+99,All (flexible),AI coding,,AI coding (multiple schemas based on content)
+100,All (flexible),AI coding,,AI coding (multiple schemas based on content)
