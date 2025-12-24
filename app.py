@@ -77,7 +77,7 @@ fallback_schemas = [
         "category": "Disconnection & Rejection",
         "causes": "Lack of nurturance, empathy, or affection from caregivers.",
         "symptoms": "Feeling chronically lonely, 'no one is there for me', choosing distant partners.",
-        "manifestations": "Connection (closeness), Roots (neglect), Vitality (mood)",
+        "manifestations": "Connection (closeness/intimacy), Roots (neglect/affection lack), Vitality (mood)",
         "plan": {
             "week1": "Need Awareness: Every time you feel empty, write down what you needed: Empathy, Protection, or Nurturance.",
             "week2": "Cognitive Flashcard: Create a card: 'My feeling that no one cares is a schema memory, not a current fact.'",
@@ -89,8 +89,8 @@ fallback_schemas = [
         "name": "Defectiveness / Shame",
         "category": "Disconnection & Rejection",
         "causes": "Criticism, rejection, or shaming; feeling inherently flawed.",
-        "symptoms": "Deep shame, self-loathing, hypersensitivity to criticism, hiding 'defects'.",
-        "manifestations": "Digital Wellbeing (comparison), Meaning (self-worth), Roots (insults)",
+        "symptoms": "Deep shame, self-loathing, hypersensitivity to criticism, hiding 'defects', self-sabotage in relationships.",
+        "manifestations": "Digital Wellbeing (comparison), Meaning (self-worth), Roots (insults/shame)",
         "plan": {
             "week1": "Critic Audit: Name your inner critic (e.g., 'The Judge'). Note how often it speaks and the words it uses.",
             "week2": "Humanity Re-framing: When you make a mistake, say: 'This is a common human experience, not a defect.'",
@@ -101,9 +101,9 @@ fallback_schemas = [
     {
         "name": "Social Isolation / Alienation",
         "category": "Disconnection & Rejection",
-        "causes": "Feeling different or excluded from family or peers.",
-        "symptoms": "Sense of being outsider, avoidance of groups, feeling no one understands.",
-        "manifestations": "Connection (outsider), Environment (identity), Digital Wellbeing (comparison)",
+        "causes": "Feeling different or excluded from family/peers.",
+        "symptoms": "Sense of being outsider, avoidance of groups despite longing, feeling no one understands.",
+        "manifestations": "Connection (outsider feelings), Environment (spaces/personal identity), Digital Wellbeing (comparison)",
         "plan": {
             "week1": "Similarity Search: In every social setting, find 3 things you have in common with others.",
             "week2": "Small Talk Script: Prepare 3 open-ended questions to use in conversations.",
@@ -115,8 +115,8 @@ fallback_schemas = [
         "name": "Dependence / Incompetence",
         "category": "Impaired Autonomy & Performance",
         "causes": "Overprotection or discouragement of independence.",
-        "symptoms": "Belief one is incapable, excessive reliance on others, avoidance of responsibility.",
-        "manifestations": "Growth (coping), Vitality (focus/energy), Roots (parentification)",
+        "symptoms": "Belief one is incapable, excessive reliance on others, avoidance of responsibility, helplessness.",
+        "manifestations": "Growth (coping/capability), Vitality (focus/energy), Roots (parentification)",
         "plan": {
             "week1": "Competence Log: Track 5 daily tasks you completed independently.",
             "week2": "Decision Practice: Make 3 small decisions without asking for advice.",
@@ -129,7 +129,7 @@ fallback_schemas = [
         "category": "Impaired Autonomy & Performance",
         "causes": "Exaggerated danger or traumatic events.",
         "symptoms": "Catastrophizing, excessive precaution, phobias, hypochondria.",
-        "manifestations": "Vitality (health), Environment (safety), Stability (world anxiety)",
+        "manifestations": "Vitality (health/resilience), Environment (safety/noise/light), Stability (world anxiety)",
         "plan": {
             "week1": "Worry Time: Schedule 15 minutes daily to write all worries, then stop.",
             "week2": "Probability Estimation: Rate likelihood of feared event (0-100%) and check evidence.",
@@ -141,8 +141,8 @@ fallback_schemas = [
         "name": "Enmeshment / Undeveloped Self",
         "category": "Impaired Autonomy & Performance",
         "causes": "Over-involved caregivers; no separate identity encouraged.",
-        "symptoms": "Lack of individual direction, guilt when separate, fusion with others.",
-        "manifestations": "Connection (preoccupation), Meaning (choices), Roots (mental illness in household)",
+        "symptoms": "Lack of individual direction, guilt when separate, fusion with others' emotions/needs.",
+        "manifestations": "Connection (preoccupation), Meaning (choices/values), Roots (household mental illness)",
         "plan": {
             "week1": "Identity List: Write 10 things you like that are independent of others.",
             "week2": "Boundary Practice: Say 'I need time to think' to one request.",
@@ -154,8 +154,8 @@ fallback_schemas = [
         "name": "Failure",
         "category": "Impaired Autonomy & Performance",
         "causes": "Criticism or comparison leading to belief in inevitable failure.",
-        "symptoms": "Avoidance of challenges, self-sabotage, underachievement.",
-        "manifestations": "Growth (achievement), Stability (financial plan), Vitality (energy)",
+        "symptoms": "Avoidance of challenges, self-sabotage, underachievement despite ability.",
+        "manifestations": "Growth (achievement/perfection), Stability (financial plan), Vitality (energy)",
         "plan": {
             "week1": "Success Inventory: List 10 past achievements, big or small.",
             "week2": "Growth Mindset: Replace 'I failed' with 'I learned'.",
@@ -167,8 +167,8 @@ fallback_schemas = [
         "name": "Entitlement / Grandiosity",
         "category": "Impaired Limits",
         "causes": "Overindulgence or lack of limits.",
-        "symptoms": "Belief one is superior, demands special treatment, lack of empathy.",
-        "manifestations": "Growth (deservingness), Digital Wellbeing (rules)",
+        "symptoms": "Belief one is superior, demands special treatment, lack of empathy/reciprocal responsibility.",
+        "manifestations": "Growth (deservingness/empathy), Digital Wellbeing (rules/control)",
         "plan": {
             "week1": "Empathy Log: Note one need of another person daily.",
             "week2": "Equality Reminder: 'Everyone's needs matter equally'.",
@@ -180,8 +180,8 @@ fallback_schemas = [
         "name": "Insufficient Self-Control / Self-Discipline",
         "category": "Impaired Limits",
         "causes": "Lack of structure or consequences.",
-        "symptoms": "Difficulty tolerating frustration, impulsivity, avoidance of discomfort.",
-        "manifestations": "Digital Wellbeing (scrolling), Stability (savings), Growth (procrastination)",
+        "symptoms": "Difficulty tolerating frustration, impulsivity, avoidance of discomfort needed for goals.",
+        "manifestations": "Digital Wellbeing (scrolling/notifications), Stability (savings), Growth (procrastination)",
         "plan": {
             "week1": "Impulse Log: Track urges and delay action by 10 minutes.",
             "week2": "If-Then Planning: 'If I feel urge to scroll, then I stand up and stretch'.",
@@ -193,8 +193,8 @@ fallback_schemas = [
         "name": "Subjugation",
         "category": "Other-Directedness",
         "causes": "Punishment for asserting needs; dominance in family.",
-        "symptoms": "Suppression of anger/needs, passive compliance, bottled resentment.",
-        "manifestations": "Connection (suppression), Growth (conflict avoidance)",
+        "symptoms": "Suppression of anger/needs to avoid retaliation, passive compliance, bottled resentment.",
+        "manifestations": "Connection (suppression/peace), Growth (conflict avoidance)",
         "plan": {
             "week1": "Need Awareness: Write down 3 suppressed wants daily.",
             "week2": "Low-Risk Assertion: Express one small preference ('I’d prefer X').",
@@ -207,7 +207,7 @@ fallback_schemas = [
         "category": "Other-Directedness",
         "causes": "Guilt or modeling of excessive giving.",
         "symptoms": "Over-focus on others' needs, neglect own, resentment, burnout.",
-        "manifestations": "Meaning (helping), Connection (preoccupation), Roots (parentification)",
+        "manifestations": "Meaning (helping/meaning), Connection (preoccupation), Roots (parentification)",
         "plan": {
             "week1": "Giving Audit: Track time/energy given vs. received.",
             "week2": "Self-Care Priority: Schedule one non-negotiable self-need daily.",
@@ -219,8 +219,8 @@ fallback_schemas = [
         "name": "Approval-Seeking / Recognition-Seeking",
         "category": "Other-Directedness",
         "causes": "Love conditional on performance/appearance.",
-        "symptoms": "Excessive need for admiration, identity based on external validation.",
-        "manifestations": "Digital Wellbeing (validation), Meaning (respect), Growth (worth)",
+        "symptoms": "Excessive need for admiration, identity based on external validation, conformity.",
+        "manifestations": "Digital Wellbeing (validation/likes), Meaning (respect), Growth (worth)",
         "plan": {
             "week1": "Validation Source: List 5 internal qualities you value in yourself.",
             "week2": "Social Media Fast: 1 day without seeking likes/comments.",
@@ -232,8 +232,8 @@ fallback_schemas = [
         "name": "Negativity / Pessimism",
         "category": "Overvigilance & Inhibition",
         "causes": "Focus on negative in family; repeated hardship.",
-        "symptoms": "Chronic focus on negatives, worry, discounting positives.",
-        "manifestations": "Vitality (mood), Stability (world anxiety), Meaning (gratitude)",
+        "symptoms": "Chronic focus on negatives, worry, discounting positives, life feels bleak.",
+        "manifestations": "Vitality (mood/energy), Stability (world anxiety), Meaning (gratitude/peace)",
         "plan": {
             "week1": "3 Good Things: Write 3 positive events daily and why they happened.",
             "week2": "Evidence Testing: For one worry, list evidence for/against.",
@@ -245,7 +245,7 @@ fallback_schemas = [
         "name": "Emotional Inhibition",
         "category": "Overvigilance & Inhibition",
         "causes": "Suppression of emotions shamed or punished.",
-        "symptoms": "Restraint of feelings, fear of losing control, appear rigid/cold.",
+        "symptoms": "Restraint of feelings, fear of losing control, appear rigid/cold, difficulty with spontaneity.",
         "manifestations": "Connection (hiding feelings), Digital Wellbeing (curating self), Vitality (mood)",
         "plan": {
             "week1": "Emotion Labeling: Name feelings 5 times daily.",
@@ -258,8 +258,8 @@ fallback_schemas = [
         "name": "Unrelenting Standards / Hypercriticalness",
         "category": "Overvigilance & Inhibition",
         "causes": "High pressure for performance; criticism for imperfection.",
-        "symptoms": "Perfectionism, chronic dissatisfaction, burnout, harsh judgment.",
-        "manifestations": "Growth (perfection), Meaning (peace), Connection (suppression)",
+        "symptoms": "Perfectionism, chronic dissatisfaction, burnout, harsh self/other judgment.",
+        "manifestations": "Growth (perfection/strive), Meaning (peace), Connection (suppression)",
         "plan": {
             "week1": "Standards Audit: List your 'shoulds' and question necessity.",
             "week2": "Good Enough Goal: Complete one task to 80% standard deliberately.",
@@ -271,8 +271,8 @@ fallback_schemas = [
         "name": "Punitiveness",
         "category": "Overvigilance & Inhibition",
         "causes": "Harsh punishment; intolerance of mistakes.",
-        "symptoms": "Self-punishing or punitive toward others, difficulty forgiving.",
-        "manifestations": "Vitality (guilt), Growth (critical mistakes), Roots (cruel discipline)",
+        "symptoms": "Self-punishing or punitive toward others, difficulty forgiving errors.",
+        "manifestations": "Vitality (guilt/appetite), Growth (critical mistakes), Roots (cruel discipline)",
         "plan": {
             "week1": "Mistake Log: Write mistakes without judgment.",
             "week2": "Forgiveness Letter: Write (unsent) forgiving yourself or another.",
@@ -307,6 +307,7 @@ def calculate_results():
     if weights_df is None:
         return jsonify({"error": "Server data files missing"}), 500
 
+    # Initialize scores as per your original logic
     scores = {}
 
     for _, row in weights_df.iterrows():
@@ -317,18 +318,16 @@ def calculate_results():
 
         if q_id in user_answers and schema_name:
             answer = float(user_answers[q_id])
-
             if 'reverse' in direction:
-                answer = 5 - answer + 1  # 0-4 scale reverse
+                answer = 5 - answer + 1  # Assuming 1-5 scale, adjust if 0-4
+            weighted_val = answer * weight
+            scores[schema_name] = scores.get(schema_name, 0) + weighted_val
 
-            weighted = answer * weight
-            scores[schema_name] = scores.get(schema_name, 0) + weighted
-
-    # Build results using fallback schemas (ensures full plans even if CSV missing)
+    # Merge with fallback schemas (your original code)
     results = []
     for schema in fallback_schemas:
         name = schema['name']
-        score = scores.get(name, 0.0)
+        score = scores.get(name, 0)
         results.append({
             "name": name,
             "category": schema['category'],
@@ -343,15 +342,14 @@ def calculate_results():
     return jsonify({"top_schemas": results})
 
 # -----------------------------
-# SERVE REACT FRONTEND (Fixes 404)
+# SERVE REACT FRONTEND
 # -----------------------------
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve_react(path):
     build_path = os.path.join(os.getcwd(), FRONTEND_BUILD_FOLDER)
-    file_path = os.path.join(build_path, path)
-
-    if path != "" and os.path.exists(file_path):
+    full_path = os.path.join(build_path, path)
+    if path != "" and os.path.exists(full_path):
         return send_from_directory(build_path, path)
     else:
         return send_from_directory(build_path, 'index.html')
