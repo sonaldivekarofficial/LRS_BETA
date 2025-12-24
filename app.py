@@ -49,9 +49,9 @@ fallback_schemas = [
     {
         "name": "Abandonment / Instability",
         "category": "Disconnection & Rejection",
-        "causes": "Unstable or unreliable caregiving; early loss or parent absence.",
-        "symptoms": "Intense fear of loss, clinginess, jealousy, or withdrawal.",
-        "manifestations": "Connection (attachment worry), Roots (parent loss), Stability (world anxiety)",
+        "causes": "Unstable or unreliable caregiving; fear that close others will leave.",
+        "symptoms": "Intense fear of loss, clinginess or avoidance in relationships, jealousy, emotional volatility.",
+        "manifestations": "Connection (attachment worry), Roots (parent absence/loss), Stability (world anxiety)",
         "plan": {
             "week1": "Trigger Mapping: Record every time you feel 'abandonment panic'. Note the objective trigger vs. the internal fear.",
             "week2": "The Healthy Adult Voice: Practice the thought: 'I am an adult now. Even if this person leaves, I can care for myself.'",
@@ -62,9 +62,9 @@ fallback_schemas = [
     {
         "name": "Mistrust / Abuse",
         "category": "Disconnection & Rejection",
-        "causes": "Abuse, betrayal, or manipulation by caregivers or peers.",
-        "symptoms": "Expectation of harm, hypervigilance, difficulty trusting, testing others.",
-        "manifestations": "Roots (trauma items), Connection (trust difficulty), Environment (safety)",
+        "causes": "Abuse, betrayal, or manipulation by caregivers/others.",
+        "symptoms": "Expectation of harm/deception, hypervigilance, difficulty trusting, may test or provoke others.",
+        "manifestations": "Roots (abuse/trauma items), Connection (trust difficulty), Environment (safety concerns)",
         "plan": {
             "week1": "Evidence Checking: Pick one person you distrust. List evidence 'for' and 'against' the belief they intend harm.",
             "week2": "Boundary Training: Practice saying 'I’m not comfortable with that' to minor requests to build internal safety.",
@@ -76,7 +76,7 @@ fallback_schemas = [
         "name": "Emotional Deprivation",
         "category": "Disconnection & Rejection",
         "causes": "Lack of nurturance, empathy, or affection from caregivers.",
-        "symptoms": "Feeling chronically lonely, 'no one is there for me', choosing distant partners.",
+        "symptoms": "Belief no one will meet emotional needs, loneliness, difficulty asking for support, choosing depriving partners.",
         "manifestations": "Connection (closeness/intimacy), Roots (neglect/affection lack), Vitality (mood)",
         "plan": {
             "week1": "Need Awareness: Every time you feel empty, write down what you needed: Empathy, Protection, or Nurturance.",
@@ -347,7 +347,7 @@ def calculate_results():
                 text_lower = answer_value.lower()
                 for s_name, kws in keywords.items():
                     if any(kw in text_lower for kw in kws):
-                        scores[s_name] = scores.get(s_name, 0) + weight * 4  # Assume high score for match
+                        scores[s_name] = scores.get(s_name, 0) + weight * 4  # High score for match
             else:
                 # Numeric answer
                 try:
@@ -355,7 +355,7 @@ def calculate_results():
                 except ValueError:
                     continue
                 if 'reverse' in direction:
-                    answer = 5 - answer + 1
+                    answer = 5 - answer + 1  # 0-4 scale reverse
                 weighted = answer * weight
                 scores[schema_name] = scores.get(schema_name, 0) + weighted
 
@@ -374,6 +374,8 @@ def calculate_results():
         })
 
     results.sort(key=lambda x: x['score'], reverse=True)
+    # Limit to top 5
+    results = results[:5]
     return jsonify({"top_schemas": results})
 
 # -----------------------------
