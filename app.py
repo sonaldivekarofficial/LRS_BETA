@@ -294,7 +294,7 @@ def get_questions():
     if qa_df is None:
         return jsonify({"error": "Questions file not loaded"}), 500
     
-    # FIX: Replace all NaN with empty string to prevent invalid JSON
+    # Replace NaN with empty string to prevent invalid JSON
     clean_df = qa_df.fillna('')
     questions = clean_df.to_dict(orient='records')
     return jsonify(questions)
@@ -318,10 +318,20 @@ def calculate_results():
         weight = float(row.get('Weight', 1.0))
         direction = str(row.get('SCORING LOGIC', '')).strip().lower()
 
-        if q_id in user_answers and schema_name:
-            answer = float(user_answers[q_id])
+        # Only process if this question has a numeric answer (skip open-ended)
+        if q_id in user_answers:
+            answer_value = user_answers[q_id]
+            # Skip non-numeric answers (open-ended text)
+            if not isinstance(answer_value, (int, float)):
+                continue
+            try:
+                answer = float(answer_value)
+            except (ValueError, TypeError):
+                continue  # Skip invalid
+
             if 'reverse' in direction:
                 answer = 5 - answer + 1  # 0-4 scale reverse
+
             weighted = answer * weight
             scores[schema_name] = scores.get(schema_name, 0) + weighted
 
