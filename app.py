@@ -318,22 +318,46 @@ def calculate_results():
         weight = float(row.get('Weight', 1.0))
         direction = str(row.get('SCORING LOGIC', '')).strip().lower()
 
-        # Only process if this question has a numeric answer (skip open-ended)
         if q_id in user_answers:
             answer_value = user_answers[q_id]
-            # Skip non-numeric answers (open-ended text)
-            if not isinstance(answer_value, (int, float)):
-                continue
-            try:
-                answer = float(answer_value)
-            except (ValueError, TypeError):
-                continue  # Skip invalid
-
-            if 'reverse' in direction:
-                answer = 5 - answer + 1  # 0-4 scale reverse
-
-            weighted = answer * weight
-            scores[schema_name] = scores.get(schema_name, 0) + weighted
+            if isinstance(answer_value, str):
+                # AI synthesis for open-ended
+                # Simple keyword-based "AI" for demo - in real, use xAI API or Grok
+                # For each schema, check if text mentions keywords
+                keywords = {
+                    "Abandonment / Instability": ["abandon", "leave", "unstable", "loss"],
+                    "Mistrust / Abuse": ["abuse", "betray", "deceive", "hurt", "mistrust"],
+                    "Emotional Deprivation": ["deprived", "lonely", "unloved", "neglect"],
+                    "Defectiveness / Shame": ["defect", "shame", "flawed", "unworthy"],
+                    "Social Isolation / Alienation": ["isolate", "alien", "outsider", "excluded"],
+                    "Dependence / Incompetence": ["depend", "incompetent", "helpless"],
+                    "Vulnerability to Harm or Illness": ["vulnerable", "harm", "illness", "danger"],
+                    "Enmeshment / Undeveloped Self": ["enmesh", "undeveloped", "fusion"],
+                    "Failure": ["fail", "underachieve", "inadequate"],
+                    "Entitlement / Grandiosity": ["entitle", "grand", "superior", "special"],
+                    "Insufficient Self-Control / Self-Discipline": ["impulse", "lack control", "discipline"],
+                    "Subjugation": ["subjugate", "suppress", "give in"],
+                    "Self-Sacrifice": ["sacrifice", "overgive", "neglect self"],
+                    "Approval-Seeking / Recognition-Seeking": ["approve", "seek recognition", "validation"],
+                    "Negativity / Pessimism": ["negative", "pessim", "bleak"],
+                    "Emotional Inhibition": ["inhibit emotion", "suppress feeling", "rigid"],
+                    "Unrelenting Standards / Hypercriticalness": ["unrelent standard", "hypercritic", "perfection"],
+                    "Punitiveness": ["punitive", "unforgiving", "self-punish"]
+                }
+                text_lower = answer_value.lower()
+                for s_name, kws in keywords.items():
+                    if any(kw in text_lower for kw in kws):
+                        scores[s_name] = scores.get(s_name, 0) + weight * 4  # Assume high score for match
+            else:
+                # Numeric answer
+                try:
+                    answer = float(answer_value)
+                except ValueError:
+                    continue
+                if 'reverse' in direction:
+                    answer = 5 - answer + 1
+                weighted = answer * weight
+                scores[schema_name] = scores.get(schema_name, 0) + weighted
 
     results = []
     for schema in fallback_schemas:
