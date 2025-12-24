@@ -4,21 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LRS Beta</title>
-    <!-- Tailwind CSS CDN for styling -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- React, ReactDOM, Babel (for JSX in browser) -->
+    <!-- React + ReactDOM -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <!-- Lucide icons -->
+    <!-- Babel for JSX in browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- jsPDF for PDF download -->
+    <!-- jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; }
+    </style>
   </head>
-  <body class="bg-slate-50">
+  <body>
     <div id="root"></div>
     <script type="text/babel" src="/static/js/main.js"></script>
-    <script>
+    <script type="text/babel">
+      // Initialize lucide icons
       lucide.createIcons();
     </script>
   </body>
