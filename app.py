@@ -17,8 +17,8 @@ FRONTEND_BUILD_FOLDER = "client/build"
 
 # CSV file names — MUST EXACTLY MATCH your uploaded files in repo
 QUESTIONS_FILE = "LRS_Beta_QA.csv"
-WEIGHT_MAP_FILE = "LRS_BETA_Weighted_Score_Map.csv"          # ← Fixed: underscore, no space
-SCHEMA_INFO_FILE = "LRS_Beta_Young_18_Schemas.csv"           # ← Fixed: no leading space
+WEIGHT_MAP_FILE = "LRS_BETA_Weighted_Score_Map.csv"
+SCHEMA_INFO_FILE = "LRS_Beta_Young_18_Schemas.csv"
 
 # -----------------------------
 # DATA LOADER (safe for CSV or misnamed XLSX)
@@ -293,7 +293,10 @@ def health_check():
 def get_questions():
     if qa_df is None:
         return jsonify({"error": "Questions file not loaded"}), 500
-    questions = qa_df.to_dict(orient='records')
+    
+    # FIX: Replace all NaN with empty string to prevent invalid JSON
+    clean_df = qa_df.fillna('')
+    questions = clean_df.to_dict(orient='records')
     return jsonify(questions)
 
 @app.route('/api/calculate', methods=['POST'])
@@ -307,7 +310,6 @@ def calculate_results():
     if weights_df is None:
         return jsonify({"error": "Server data files missing"}), 500
 
-    # Initialize scores as per your original logic
     scores = {}
 
     for _, row in weights_df.iterrows():
@@ -319,15 +321,14 @@ def calculate_results():
         if q_id in user_answers and schema_name:
             answer = float(user_answers[q_id])
             if 'reverse' in direction:
-                answer = 5 - answer + 1  # Assuming 1-5 scale, adjust if 0-4
-            weighted_val = answer * weight
-            scores[schema_name] = scores.get(schema_name, 0) + weighted_val
+                answer = 5 - answer + 1  # 0-4 scale reverse
+            weighted = answer * weight
+            scores[schema_name] = scores.get(schema_name, 0) + weighted
 
-    # Merge with fallback schemas (your original code)
     results = []
     for schema in fallback_schemas:
         name = schema['name']
-        score = scores.get(name, 0)
+        score = scores.get(name, 0.0)
         results.append({
             "name": name,
             "category": schema['category'],
